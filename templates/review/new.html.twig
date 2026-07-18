@@ -3,13 +3,17 @@
 {% block title %}Új vélemény - Cégértékelő{% endblock %}
 
 {% block body %}
-    <h1 class="mb-4">Új vélemény beküldése</h1>
+    <h1 class="mb-4 text-center">Új vélemény beküldése</h1>
 
-    {{ form_start(form) }}
-        {{ form_row(form.companyName) }}
-        {{ form_row(form.rating) }}
-        {{ form_row(form.reviewText) }}
-        {{ form_row(form.authorEmail) }}
-        {{ form_row(form.submit, {attr: {class: 'btn btn-primary'}}) }}
-    {{ form_end(form) }}
+    <div class="form-card">
+        {{ form_start(form) }}
+            {{ form_row(form.companyName) }}
+            {{ form_row(form.rating) }}
+            {{ form_row(form.reviewText) }}
+            {{ form_row(form.authorEmail) }}
+            <div class="d-grid mt-4">
+                {{ form_row(form.submit, {attr: {class: 'btn btn-primary btn-lg'}}) }}
+            </div>
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

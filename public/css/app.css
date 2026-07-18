@@ -1,0 +1,82 @@
+:root {
+    --brand-color: #4f46e5;
+    --brand-color-dark: #3730a3;
+    --surface-bg: #f8f9fc;
+    --star-color: #f5b301;
+}
+
+body {
+    background-color: var(--surface-bg);
+}
+
+.navbar {
+    background-color: var(--brand-color-dark) !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.btn-primary {
+    background-color: var(--brand-color);
+    border-color: var(--brand-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--brand-color-dark);
+    border-color: var(--brand-color-dark);
+}
+
+.text-warning {
+    color: var(--star-color) !important;
+    letter-spacing: 0.1em;
+}
+
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(17, 24, 39, 0.08);
+}
+
+.form-card {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(17, 24, 39, 0.08);
+}
+
+.list-group-item {
+    border: none;
+    border-radius: 0.75rem !important;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(17, 24, 39, 0.06);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.list-group-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(17, 24, 39, 0.12);
+}
+
+.table thead th {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    border-bottom-width: 1px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #fff;
+}
+
+.table {
+    background: #fff;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 0.25rem 0.75rem rgba(17, 24, 39, 0.06);
+}
