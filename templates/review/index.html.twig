@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% import 'macros.html.twig' as macros %}
+
+{% block title %}Vélemények - Cégértékelő{% endblock %}
+
+{% block body %}
+    <h1 class="mb-4">Vélemények</h1>
+
+    <form method="get" class="row g-2 mb-4">
+        <div class="col-auto">
+            <input type="search" name="q" value="{{ companyNameSearch }}" class="form-control" placeholder="Keresés cégnév alapján">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-outline-secondary">Keresés</button>
+            {% if companyNameSearch %}
+                <a href="{{ path('review_index') }}" class="btn btn-link">Szűrő törlése</a>
+            {% endif %}
+        </div>
+    </form>
+
+    {% if reviews is empty %}
+        <p class="text-muted">
+            {% if companyNameSearch %}
+                Nincs találat a(z) „{{ companyNameSearch }}” keresésre.
+            {% else %}
+                Még nincs egyetlen vélemény sem.
+            {% endif %}
+        </p>
+    {% else %}
+        <div class="list-group">
+            {% for review in reviews %}
+                <a href="{{ path('review_show', {id: review.id}) }}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ review.companyName }}</h5>
+                        <small class="text-muted">{{ review.createdAt|date('Y.m.d. H:i') }}</small>
+                    </div>
+                    <div class="mb-1">{{ macros.stars(review.rating) }}</div>
+                    <p class="mb-1">{{ review.reviewText|length > 150 ? review.reviewText|slice(0, 150) ~ '…' : review.reviewText }}</p>
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

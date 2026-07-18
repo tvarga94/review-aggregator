@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Új vélemény - Cégértékelő{% endblock %}
+
+{% block body %}
+    <h1 class="mb-4">Új vélemény beküldése</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.companyName) }}
+        {{ form_row(form.rating) }}
+        {{ form_row(form.reviewText) }}
+        {{ form_row(form.authorEmail) }}
+        {{ form_row(form.submit, {attr: {class: 'btn btn-primary'}}) }}
+    {{ form_end(form) }}
+{% endblock %}

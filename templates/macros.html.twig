@@ -1,0 +1,5 @@
+{% macro stars(rating) %}
+    <span class="text-warning" aria-label="{{ rating }} / 5 csillag">
+        {% for i in 1..5 %}{{ i <= rating ? '★' : '☆' }}{% endfor %}
+    </span>
+{% endmacro %}

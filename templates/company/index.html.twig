@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cégek - Cégértékelő{% endblock %}
+
+{% block body %}
+    <h1 class="mb-4">Cégstatisztikák</h1>
+
+    {% if companyStatistics is empty %}
+        <p class="text-muted">Még nincs egyetlen vélemény sem.</p>
+    {% else %}
+        <table class="table table-striped align-middle">
+            <thead>
+                <tr>
+                    <th>Cégnév</th>
+                    <th>Vélemények száma</th>
+                    <th>Átlagos értékelés</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stat in companyStatistics %}
+                    <tr>
+                        <td>{{ stat.companyName }}</td>
+                        <td>{{ stat.reviewCount }}</td>
+                        <td>{{ stat.averageRating }} / 5</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
