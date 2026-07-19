@@ -10,7 +10,7 @@
         <div class="card-body">
             <h1 class="card-title">{{ review.companyName }}</h1>
             <div class="mb-3 fs-4">{{ macros.stars(review.rating) }}</div>
-            <p class="card-text" style="white-space: pre-line">{{ review.reviewText }}</p>
+            <p class="card-text review-text">{{ review.reviewText }}</p>
             <p class="text-muted mb-0">
                 Beküldve: {{ review.authorEmail }} &middot; {{ review.createdAt|date('Y.m.d. H:i') }}
             </p>

@@ -80,3 +80,7 @@ body {
     overflow: hidden;
     box-shadow: 0 0.25rem 0.75rem rgba(17, 24, 39, 0.06);
 }
+
+.review-text {
+    white-space: pre-line;
+}

@@ -31,7 +31,7 @@ class SecurityHeadersSubscriber implements EventSubscriberInterface
         $response->headers->set('Referrer-Policy', 'strict-origin-when-cross-origin');
         $response->headers->set('Content-Security-Policy', implode('; ', [
             "default-src 'self'",
-            "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
+            "style-src 'self' https://cdn.jsdelivr.net",
             "font-src 'self' https://cdn.jsdelivr.net",
             "img-src 'self' data:",
             "script-src 'self'",
