@@ -40,13 +40,7 @@ class ReviewController extends AbstractController
 
             if (!$limiter->consume(1)->isAccepted()) {
                 $this->addFlash('danger', 'Túl sok véleményt küldtél be rövid idő alatt. Kérjük, próbáld újra néhány perc múlva.');
-
-                return $this->render('review/new.html.twig', [
-                    'form' => $form,
-                ]);
-            }
-
-            if ($form->isValid()) {
+            } elseif ($form->isValid()) {
                 $entityManager->persist($review);
                 $entityManager->flush();
 
