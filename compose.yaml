@@ -17,6 +17,7 @@ services:
       start_period: 60s
     volumes:
       - database_data:/var/lib/mysql:rw
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d:ro
 ###< doctrine/doctrine-bundle ###
 
 volumes:
